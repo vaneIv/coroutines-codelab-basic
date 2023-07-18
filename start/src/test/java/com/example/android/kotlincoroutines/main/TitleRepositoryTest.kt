@@ -43,12 +43,6 @@ class TitleRepositoryTest {
         Truth.assertThat(titleDao.nextInsertedOrNull()).isEqualTo("OK")
     }
 
-//    @Test(expected = TitleRefreshError::class)
-//    fun whenRefreshTitleTimeout_throws() {
-//        // TODO: Write this test
-//        throw TitleRefreshError("Remove this – made test pass in starter code", null)
-//    }
-
     @Test(expected = TitleRefreshError::class)
     fun whenRefreshTitleTimeout_throws() = runBlockingTest {
         val network = MainNetworkCompletableFake()
